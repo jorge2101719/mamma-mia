@@ -34,8 +34,8 @@ export default function Carrito() {
               <Col xs={1}><img src={producto.img} alt={producto.name} style={{width: '4rem'}} /></Col>
               <Col className='text-start' xs={3}>{producto.name.charAt(0).toUpperCase() + producto.name.slice(1)} </Col>
               <Col xs={1}>{producto.cantidad}</Col>
-              <Col xs={1}>{producto.price.toLocaleString('cl-CL')} </Col>
-              <Col xs={2}>${(producto.cantidad * producto.price).toLocaleString('cl-CL')}</Col>
+              <Col xs={1}>$ {producto.price.toLocaleString('cl-CL')} </Col>
+              <Col xs={2}>$ {(producto.cantidad * producto.price).toLocaleString('cl-CL')}</Col>
               <Col xs={2}><button onClick={() => incrementar(producto)} className='btn btn-success'> + </button></Col>
               <Col xs={2}><button onClick={() => decrementar(producto)} className='btn btn-danger'> - </button></Col>
             </Row>
@@ -58,7 +58,7 @@ export default function Carrito() {
           </Col>
           <Col>{contador}</Col>
           <Col>Total a pagar</Col>
-          <Col>${total.toLocaleString('cl-CL')}</Col>
+          <Col>$ {total.toLocaleString('cl-CL')}</Col>
           <Col>
             <button onClick={() => limpiarElCarrito()} className='btn btn-success text-light'>Pagar</button>
           </Col>
