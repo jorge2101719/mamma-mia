@@ -14,10 +14,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // y otros que se me escapan en este momento
 
 import PizzasNavbar from './components/PizzasNavbar/PizzasNavbar';
-import Home from './views/home/Home';
+import Home from './views/pizzaHome/Home';
 import PizzaDetalle from './views/detalles/PizzaDetalle';
-import Carrito from './views/Carrito';
-import Error from './views/Error';
+import Carrito from './views/carrito/Carrito';
+import Error from './views/pizzaError/Error';
 
 function App() {
 

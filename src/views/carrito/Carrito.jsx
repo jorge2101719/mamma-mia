@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './Carrito.css'
 
-import { PizzasContext } from '../context/PizzaContext';
+import { PizzasContext } from '../../context/PizzaContext';
 import { useContext } from 'react';
 
 export default function Carrito() {
@@ -29,22 +29,25 @@ export default function Carrito() {
     <Container style={{width: '100rem'}} className='justify-content-center'>
       {carrito.length > 0 ?  (
         <div className='text-light fs-5'>
+          <Row className='mb-5'>
+            <Col className='text-start fs-1 fw-bold'>Detalles del Pedido:</Col>
+          </Row>
           {carrito.map((producto) => 
             <Row key={producto.id}>
               <Col xs={1}><img src={producto.img} alt={producto.name} style={{width: '4rem'}} /></Col>
-              <Col className='text-start' xs={3}>{producto.name.charAt(0).toUpperCase() + producto.name.slice(1)} </Col>
-              <Col xs={1}>{producto.cantidad}</Col>
+              <Col xs={4} className='text-start'>{producto.name.charAt(0).toUpperCase() + producto.name.slice(1)} </Col>
+              <Col xs={2}>{producto.cantidad}</Col>
               <Col xs={1}>$ {producto.price.toLocaleString('cl-CL')} </Col>
               <Col xs={2}>$ {(producto.cantidad * producto.price).toLocaleString('cl-CL')}</Col>
-              <Col xs={2}><button onClick={() => incrementar(producto)} className='btn btn-success'> + </button></Col>
-              <Col xs={2}><button onClick={() => decrementar(producto)} className='btn btn-danger'> - </button></Col>
+              <Col ><Button onClick={() => incrementar(producto)} className='btn btn-success'> + </Button></Col>
+              <Col ><Button onClick={() => decrementar(producto)} className='btn btn-danger'> - </Button></Col>
             </Row>
           )}
         </div>
       ) : (
         <div>
           <p className='badge text-light text-center fs-1'>El carrito está vacío.</p>
-          <p><Button onClick={() => navigatePizza('/')}>Volver</Button></p>
+          <p><Button onClick={() => navigatePizza('/')}>Volver a 🏡</Button></p>
         </div>
       )}
       <hr className='text-primary' />
@@ -60,7 +63,7 @@ export default function Carrito() {
           <Col>Total a pagar</Col>
           <Col>$ {total.toLocaleString('cl-CL')}</Col>
           <Col>
-            <button onClick={() => limpiarElCarrito()} className='btn btn-success text-light'>Pagar</button>
+            <Button onClick={() => limpiarElCarrito()} className='btn btn-success text-light'>Pagar</Button>
           </Col>
         </Row>
         )

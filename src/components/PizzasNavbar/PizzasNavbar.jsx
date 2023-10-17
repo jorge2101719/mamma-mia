@@ -22,7 +22,7 @@ const PizzasNavbar = () => {
         </NavLink> 
         <NavLink className={ setActiveClass } to="/carrito">
           <img src='/carrito-de-compras.png' style={{width: '2rem'}} />
-          <span className='totalCompra'>Carrito $ {total.toLocaleString('cl-CL')}</span>
+          <span className='totalCompra'> Carrito $ {total.toLocaleString('cl-CL')}</span>
         </NavLink>
       </nav>
     </div>

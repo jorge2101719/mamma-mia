@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './detalleDeLaPizza.css';
-import '../../views/home/Home';
+import '../pizzaHome/Home';
 
 const PizzaDetalle = () => {
   const { id } = useParams();
@@ -37,9 +37,11 @@ const PizzaDetalle = () => {
           <ul>
             { detalleDeLaPizza.ingredients.map( (ingrediente, indice) => <li key={indice}>{ingrediente}</li> ) }
           </ul>
-          <h3><span>Precio: ${detalleDeLaPizza.price.toLocaleString('cl-CL')}</span></h3>
-          <p><Button className='btn btn-primary' onClick={() => agregarAlCarrito(detalleDeLaPizza)}>Agregar</Button></p>
-          <p><Button className='btn btn-success' onClick={() => navigatePizza('/')}>Volver</Button></p>
+          <section className='d-flex justify-content-around'>
+            <p className='fs-1 fw-bold'>Precio: ${detalleDeLaPizza.price.toLocaleString('cl-CL')}</p>
+            <p><Button className='btn btn-danger' onClick={() => agregarAlCarrito(detalleDeLaPizza)}>Agregar 🛒</Button></p>
+            <p><Button className='btn btn-success' onClick={() => navigatePizza('/')}>Volver a 🏡</Button></p>
+          </section>
         </div>
       </section>
        : 'no hay datos'}
