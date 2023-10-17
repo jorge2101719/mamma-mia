@@ -1,0 +1,19 @@
+.active {
+  color: yellow;
+  font-size: large;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.no-active {
+  color: black;
+  font-weight: lighter;
+}
+
+.totalCompra {
+  font-weight: bold;
+}
+
+span {
+  margin-left: 1rem ;
+}

@@ -1,0 +1,23 @@
+.detalles {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  color: white;
+}
+
+.detalles div {
+  width: 100%;
+}
+
+.description {
+  text-align: justify;
+}
+
+button {
+  margin: 1rem;
+}
+
+img {
+  border-radius: 2%;
+}
