@@ -2,9 +2,9 @@ import { useContext } from "react";
 
 import { PizzasContext } from "../../context/PizzaContext";
 import Cartas from '../../components/cartas/Cartas';
-import Buscando from '../../components/buscando/Buscando'
+import Buscando from '../../components/buscando/Buscando';
 
-import '../home/Home.css'
+import './Home.css';
 
 const Home = () => {
   const { pizzas }  = useContext(PizzasContext);
