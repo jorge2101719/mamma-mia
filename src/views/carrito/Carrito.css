@@ -1,3 +1,9 @@
 .estilo-carrito{
-    width: 100vw;
+  width: 100vw;
+}
+
+@media (max-width: 1200px) {
+  .no-ver {
+    visibility: hidden;
+  }
 }

@@ -34,11 +34,11 @@ export default function Carrito() {
           </Row>
           {carrito.map((producto) => 
             <Row key={producto.id}>
-              <Col xs={1}><img src={producto.img} alt={producto.name} style={{width: '4rem'}} /></Col>
-              <Col xs={4} className='text-start'>{producto.name.charAt(0).toUpperCase() + producto.name.slice(1)} </Col>
-              <Col xs={2}>{producto.cantidad}</Col>
-              <Col xs={1}>$ {producto.price.toLocaleString('cl-CL')} </Col>
-              <Col xs={2}>$ {(producto.cantidad * producto.price).toLocaleString('cl-CL')}</Col>
+              <Col xs={1} className='no-ver'><img src={producto.img} alt={producto.name} style={{width: '4rem'}} /></Col>
+              <Col xs={3} className='text-start'>{producto.name.charAt(0).toUpperCase() + producto.name.slice(1)} </Col>
+              <Col xs={1} className='no-ver'>{producto.cantidad}</Col>
+              <Col xs={1} className='no-ver'>$ {producto.price.toLocaleString('cl-CL')} </Col>
+              <Col xs={1} md={2} className='no-ver'>$ {(producto.cantidad * producto.price).toLocaleString('cl-CL')}</Col>
               <Col ><Button onClick={() => incrementar(producto)} className='btn btn-success'> + </Button></Col>
               <Col ><Button onClick={() => decrementar(producto)} className='btn btn-danger'> - </Button></Col>
             </Row>
@@ -53,14 +53,14 @@ export default function Carrito() {
       <hr className='text-primary' />
       {carrito.length === 0 ? ('') : (
         <Row className='text-light fw-bold fs-4'>
-          <Col xs={1}>
-            <img src='/public/pizza.png' style={{width: '2rem'}} />
+          <Col>
+            <img src='/public/pizza.png' style={{width: '2rem'}} className='no-ver' />
           </Col>
-          <Col xs={3}>
+          <Col className='no-ver'>
             Total de productos
           </Col>
-          <Col>{contador}</Col>
-          <Col>Total a pagar</Col>
+          <Col className='no-ver'>{contador}</Col>
+          <Col className='no-ver'>Total a pagar</Col>
           <Col>$ {total.toLocaleString('cl-CL')}</Col>
           <Col>
             <Button onClick={() => limpiarElCarrito()} className='btn btn-success text-light'>Pagar</Button>
