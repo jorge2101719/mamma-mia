@@ -12,6 +12,7 @@
   /* -webkit-font-smoothing: antialiased; */
   /* -moz-osx-font-smoothing: grayscale; */
   /* -webkit-text-size-adjust: 100%; */
+  --bg-image: url('/public/luces.jpg');
 }
 
 a {
@@ -32,7 +33,7 @@ body {
   place-items: center;
   /* min-width: 320px; */
   min-height: 100vh;
-  background-image: url('/public/luces.jpg');
+  background-image: var(--bg-image);
   background-position: 0 50%;
   background-size: 100% 100%;
   background-repeat: no-repeat;

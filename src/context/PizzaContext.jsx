@@ -50,6 +50,7 @@ const PizzasContextProvider = ({ children }) => {
     setCarrito([]);
     setTotal(0);
     setContador(0);
+    alert('Gracias por preferirnos')
   }
 
   return (
