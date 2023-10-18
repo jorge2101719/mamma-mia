@@ -46,8 +46,8 @@ export default function Carrito() {
         </div>
       ) : (
         <div>
-          <p className='badge text-light text-center fs-1'>El carrito está vacío.</p>
-          <p><Button onClick={() => navigatePizza('/')}>Volver a 🏡</Button></p>
+          <p className='badge text-light text-center fs-1'>Gracias por preferirnos.</p>
+          <p><Button onClick={() => navigatePizza('/')} className='btn btn-primary fs-4'>Volver a 🏡</Button></p>
         </div>
       )}
       <hr className='text-primary' />
@@ -61,7 +61,7 @@ export default function Carrito() {
           </Col>
           <Col className='no-ver'>{contador}</Col>
           <Col className='no-ver'>Total a pagar</Col>
-          <Col>$ {total.toLocaleString('cl-CL')}</Col>
+          <Col><span className='no-ver'>$</span> {total.toLocaleString('cl-CL')}</Col>
           <Col>
             <Button onClick={() => limpiarElCarrito()} className='btn btn-success text-light'>Pagar</Button>
           </Col>
