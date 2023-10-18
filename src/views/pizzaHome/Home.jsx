@@ -12,8 +12,8 @@ const Home = () => {
   return (
     <div className="home">
       <header className="banner">
-        <h1>¡Pizzería Mamma Mía!</h1>
-        <p>¡Tenemos las mejores pizzas que podrás encontrar!</p>
+        <h1 className="fw-bold">¡Pizzería Mamma Mía!</h1>
+        <p className="fw-bold fs-5">¡Tenemos las mejores pizzas que podrás encontrar!</p>
       </header>
       <section className="cards">
         { pizzas ? pizzas.map((pizza, index) => <Cartas key={index} pizza={pizza} />) : <Buscando />}
