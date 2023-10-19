@@ -49,11 +49,17 @@ const PizzasContextProvider = ({ children }) => {
     setCarrito([]);
     setTotal(0);
     setContador(0);
-    alert('Gracias por preferirnos')
+  }
+
+  const pagar = () => {
+    setCarrito([]);
+    setTotal(0);
+    setContador(0);
+    alert('Gracias por su compra')
   }
 
   return (
-    <PizzasContext.Provider value={{ pizzas, carrito, total, contador, agregarAlCarrito, quitarDelCarrito, limpiarElCarrito }} >
+    <PizzasContext.Provider value={{ pizzas, carrito, total, contador, agregarAlCarrito, quitarDelCarrito, limpiarElCarrito, pagar }} >
       {children}
     </PizzasContext.Provider>
   )

@@ -2,6 +2,11 @@
   width: 100vw;
 }
 
+.titular-carrito {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 1200px) {
   .no-ver {
     visibility: hidden;
