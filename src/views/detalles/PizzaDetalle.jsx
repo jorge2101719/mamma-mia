@@ -33,7 +33,7 @@ const PizzaDetalle = () => {
         <div>
           <div className='h1'>{detalleDeLaPizza.name.charAt(0).toUpperCase() + detalleDeLaPizza.name.slice(1)}</div>
           <p className='description'>{detalleDeLaPizza.desc}</p>
-          <strong>Ingredientes:</strong>
+          <p className='fs-4 fw-bold text-start'>Ingredientes:</p>
           <ul>
             { detalleDeLaPizza.ingredients.map( (ingrediente, indice) => <li key={indice}>{ingrediente}</li> ) }
           </ul>

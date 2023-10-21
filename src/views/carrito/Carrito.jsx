@@ -57,7 +57,7 @@ export default function Carrito() {
         {carrito.length === 0 ? ('') : (
           <Row className='text-light fw-bold fs-4'>
             <Col className='no-ver'>
-              Total de productos
+              Productos
             </Col>
             <Col className='no-ver'>{contador}</Col>
             <Col className='no-ver'>Total a pagar</Col>
