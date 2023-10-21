@@ -1,7 +1,6 @@
 import { useContext } from 'react'
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-// import Card from 'react-bootstrap/Card';
+
 import { PizzasContext } from '../../context/PizzaContext'
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';

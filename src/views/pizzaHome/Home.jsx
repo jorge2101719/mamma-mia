@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { PizzasContext } from "../../context/PizzaContext";
 import Cartas from '../../components/cartas/Cartas';
 import Buscando from '../../components/buscando/Buscando';
+import Footer from '../../components/footer/Footer';
 
 import './Home.css';
 
@@ -18,6 +19,7 @@ const Home = () => {
       <section className="cards">
         { pizzas ? pizzas.map((pizza, index) => <Cartas key={index} pizza={pizza} />) : <Buscando />}
       </section>
+      <Footer />
     </div>
   )
 }
