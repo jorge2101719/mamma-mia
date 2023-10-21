@@ -17,6 +17,7 @@ const Footer = () => {
         <Form.Label>Déjenos su comentario</Form.Label>
         <Form.Control as='textarea' rows={3} />
       </Form.Group>
+      <Button variant='primary'>Enviar Comentario</Button>
     </Form>
   </div>
   )
