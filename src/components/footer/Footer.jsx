@@ -1,12 +1,10 @@
 import { useContext } from 'react'
 import { PizzasContext } from '../../context/PizzaContext';
-import Button from 'react-bootstrap/Button'
-
-import Form from "react-bootstrap/Form";
-
+import Button from 'react-bootstrap/Button';
 
 const Footer = () => {
   const { limpiarElCarrito, total, pagar } = useContext(PizzasContext);
+
   return (
   <div className="bg-dark text-light p-3">
     <p className='fs-3 fw-bold'>Pizzería Mamma Mia</p>
@@ -16,13 +14,6 @@ const Footer = () => {
       <Button variant="success" onClick={() => pagar()}>Pagar</Button>
       <Button onClick={() => limpiarElCarrito()}>Limpiar el carrito</Button>
     </div>) : ('')}
-    <Form className='p-2'>
-      <Form.Group className='m-2'>
-        <Form.Label>Déjenos su comentario</Form.Label>
-        <Form.Control as='textarea' rows={3} />
-      </Form.Group>
-      <Button variant='primary'>Enviar Comentario</Button>
-    </Form>
   </div>
   )
 }
