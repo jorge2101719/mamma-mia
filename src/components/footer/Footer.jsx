@@ -10,9 +10,12 @@ const Footer = () => {
   return (
   <div className="bg-dark text-light p-3">
     <p className='fs-3 fw-bold'>Pizzería Mamma Mia</p>
-    <p className='fs-5 fw-bold'>El total de su compra es: ${total.toLocaleString('cl-CL')}</p>
-    <Button variant="success" onClick={() => pagar()}>Pagar</Button>
-    <Button onClick={() => limpiarElCarrito()}>Limpiar el carrito</Button>
+    {total > 0 ? (
+    <div>
+      <p className='fs-5 fw-bold'>El total de su compra es: ${total.toLocaleString('cl-CL')}</p>
+      <Button variant="success" onClick={() => pagar()}>Pagar</Button>
+      <Button onClick={() => limpiarElCarrito()}>Limpiar el carrito</Button>
+    </div>) : ('')}
     <Form className='p-2'>
       <Form.Group className='m-2'>
         <Form.Label>Déjenos su comentario</Form.Label>
