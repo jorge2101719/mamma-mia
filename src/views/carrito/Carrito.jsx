@@ -56,9 +56,6 @@ export default function Carrito() {
         <hr className='text-primary' />
         {carrito.length === 0 ? ('') : (
           <Row className='text-light fw-bold fs-4'>
-            <Col>
-              <img src='/public/pizza.png' style={{width: '2rem'}} className='no-ver' />
-            </Col>
             <Col className='no-ver'>
               Total de productos
             </Col>
