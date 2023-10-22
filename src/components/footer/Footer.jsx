@@ -19,7 +19,7 @@ const Footer = () => {
     <div>
       <p className='fs-5 fw-bold'>El total de su compra es: ${total.toLocaleString('cl-CL')}</p>
       <Button variant="success" onClick={() => pagar()}>Pagar</Button>
-      <Button onClick={() => limpiarElCarrito()}>Limpiar el carrito</Button>
+      <Button variant='danger' onClick={() => limpiarElCarrito()}>Limpiar el carrito</Button>
     </div>) : ('')}
     <Form className='p-2' >
       <Form.Group className='m-2'>

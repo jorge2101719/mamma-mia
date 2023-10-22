@@ -9,7 +9,7 @@ import { PizzasContext } from '../../context/PizzaContext';
 import { useContext } from 'react';
 
 const PizzasNavbar = () => {
-  const { total } = useContext(PizzasContext)
+  const { total } = useContext(PizzasContext);
 
   const setActiveClass = ({ isActive }) => (isActive ? "active" : "no-actve");
 

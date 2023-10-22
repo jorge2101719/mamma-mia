@@ -17,8 +17,10 @@ const PizzaDetalle = () => {
 
   const encontrarPizza = pizzas.find(pizza => pizza.id === id);
 
-  if(!encontrarPizza) {
-    alert('no se encuentra en el menú')
+  if(!encontrarPizza) {    
+    return (
+      navigatePizza('/')
+    )
   }
   
   const pizzaIndex = pizzas.findIndex(e => e.id === id)
@@ -27,23 +29,23 @@ const PizzaDetalle = () => {
 
   return (
     <div>
-      {detalleDeLaPizza ? <section className='detalles mt-5 pt-3'>
-        <img src={detalleDeLaPizza.img} style={{width: '100%'}}></img>
-        <div>
-          <div className='h1'>{detalleDeLaPizza.name.charAt(0).toUpperCase() + detalleDeLaPizza.name.slice(1)}</div>
-          <p className='description'>{detalleDeLaPizza.desc}</p>
-          <p className='fs-4 fw-bold text-start'>Ingredientes:</p>
-          <ul>
-            { detalleDeLaPizza.ingredients.map( (ingrediente, indice) => <li key={indice}>{ingrediente}</li> ) }
-          </ul>
-          <section className='d-flex justify-content-around'>
-            <p className='fs-1 fw-bold'>Precio: ${detalleDeLaPizza.price.toLocaleString('cl-CL')}</p>
-            <p><Button className='btn btn-danger' onClick={() => agregarAlCarrito(detalleDeLaPizza)}>Agregar 🛒</Button></p>
-            <p><Button className='btn btn-success' onClick={() => navigatePizza('/')}>Volver a 🏡</Button></p>
-          </section>
-        </div>
-      </section>
-       : 'no hay datos'}
+      {detalleDeLaPizza ? (
+        <section className='detalles mt-5 pt-3'>
+          <img src={detalleDeLaPizza.img} style={{width: '100%'}}></img>
+          <div>
+            <div className='h1'>{detalleDeLaPizza.name.charAt(0).toUpperCase() + detalleDeLaPizza.name.slice(1)}</div>
+            <p className='description'>{detalleDeLaPizza.desc}</p>
+            <p className='fs-4 fw-bold text-start'>Ingredientes:</p>
+            <ul>
+              { detalleDeLaPizza.ingredients.map( (ingrediente, indice) => <li key={indice}>{ingrediente}</li> ) }
+            </ul>
+            <section className='d-flex justify-content-around'>
+              <p className='fs-1 fw-bold'>Precio: $ {detalleDeLaPizza.price.toLocaleString('cl-CL')}</p>
+              <p><Button className='btn btn-success' onClick={() => agregarAlCarrito(detalleDeLaPizza)}>Agregar 🛒</Button></p>
+              <p><Button className='btn btn-primary' onClick={() => navigatePizza('/')}>Volver a 🏡</Button></p>
+            </section>
+          </div>
+        </section>) : undefined }
     </div>
   )
 }

@@ -63,10 +63,10 @@ export default function Carrito() {
             <Col className='no-ver'>Total a pagar</Col>
             <Col><span className='no-ver'>$</span> {total.toLocaleString('cl-CL')}</Col>
             <Col>
-              <Button onClick={() => limpiarElCarrito()}>Limpiar</Button>
+              <Button onClick={() => pagar()} className='btn btn-success text-light'>Pagar</Button>
             </Col>
             <Col>
-              <Button onClick={() => pagar()} className='btn btn-success text-light'>Pagar</Button>
+              <Button variant='danger' onClick={() => limpiarElCarrito()}>Limpiar</Button>
             </Col>
           </Row>
           )

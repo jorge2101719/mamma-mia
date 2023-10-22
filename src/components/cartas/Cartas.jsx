@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Cartas({ pizza }) {
   const navigatePizza = useNavigate();
-  const { agregarAlCarrito, botonAgregar } = useContext(PizzasContext);
+  const { agregarAlCarrito } = useContext(PizzasContext);
 
   const buscarPizza = () => {
     navigatePizza(`/pizza/${pizza.id}`);
@@ -26,14 +26,14 @@ export default function Cartas({ pizza }) {
               <strong>Ingredientes:</strong>
             </Card.Text>
             { pizza.ingredients.map( (ingrediente, indice) => <Card.Text key={indice} className='text-start'>
-              <img src='/public/pizza.png' alt='pizza' style={{width: '5%'}} /> {ingrediente}
+              <img src='/pizza.png' alt='pizza' style={{width: '5%'}} /> {ingrediente}
             </Card.Text> ) }
             <Card.Text className='fw-bold fs-4'>
               Precio: $ {pizza.price.toLocaleString('cl-CL')}
             </Card.Text>
             <Card.Footer className="botones">
               <Button className="btn btn-primary" onClick={ buscarPizza }>Ver más 👀</Button>              
-              <Button className="btn btn-danger" onClick={ () => agregarAlCarrito(pizza) }>Agregar 🛒</Button>
+              <Button className="btn btn-success" onClick={ () => agregarAlCarrito(pizza) }>Agregar 🛒</Button>
             </Card.Footer>
           </Card.Body>
         </Card>
