@@ -33,10 +33,11 @@ ul {
   }
   
   ul li {
-    padding-left: 2rem;
+    padding-left: 2.5rem;
+    margin-top: .125rem;
     text-align: start;
     list-style: none;
-    background-image: url('/public/pizza.png');
+    background-image: url('/pizza.png');
     background-position: 0 50%;
     background-size: 1rem 1rem;
     background-repeat: no-repeat;

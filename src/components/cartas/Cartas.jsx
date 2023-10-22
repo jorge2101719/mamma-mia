@@ -26,7 +26,7 @@ export default function Cartas({ pizza }) {
               <strong>Ingredientes:</strong>
             </Card.Text>
             { pizza.ingredients.map( (ingrediente, indice) => <Card.Text key={indice} className='text-start'>
-              <img src='/pizza.png' alt='pizza' style={{width: '5%'}} /> {ingrediente}
+              <img src='/pizza.png' alt='pizza' style={{width: '5%'}} className='mx-2' /> {ingrediente}
             </Card.Text> ) }
             <Card.Text className='fw-bold fs-4'>
               Precio: $ {pizza.price.toLocaleString('cl-CL')}
