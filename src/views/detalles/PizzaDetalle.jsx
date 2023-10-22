@@ -34,18 +34,32 @@ const PizzaDetalle = () => {
           <img src={detalleDeLaPizza.img} style={{width: '100%'}}></img>
           <div>
             <div className='h1'>{detalleDeLaPizza.name.charAt(0).toUpperCase() + detalleDeLaPizza.name.slice(1)}</div>
-            <p className='description'>{detalleDeLaPizza.desc}</p>
-            <p className='fs-4 fw-bold text-start'>Ingredientes:</p>
+            <p className='description'>
+              { detalleDeLaPizza.desc }
+            </p>
+            <p className='fs-4 fw-bold text-start'>
+              Ingredientes:
+            </p>
             <ul>
               { detalleDeLaPizza.ingredients.map( (ingrediente, indice) => <li key={indice}>{ingrediente}</li> ) }
             </ul>
             <section className='d-flex justify-content-around'>
-              <p className='fs-1 fw-bold'>Precio: $ {detalleDeLaPizza.price.toLocaleString('cl-CL')}</p>
-              <p><Button className='btn btn-success' onClick={() => agregarAlCarrito(detalleDeLaPizza)}>Agregar 🛒</Button></p>
-              <p><Button className='btn btn-primary' onClick={() => navigatePizza('/')}>Volver a 🏡</Button></p>
+              <p className='fs-1 fw-bold'>
+                Precio: $ {detalleDeLaPizza.price.toLocaleString('cl-CL')}
+              </p>
+              <p>
+                <Button className='btn btn-success' onClick={() => agregarAlCarrito(detalleDeLaPizza)}>
+                  Agregar 🛒
+                </Button>
+              </p>
+              <p>
+                <Button className='btn btn-primary' onClick={() => navigatePizza('/')}>
+                  Volver a 🏡
+                </Button>
+              </p>
             </section>
           </div>
-        </section>) : undefined }
+        </section>) : <Link to='/pizza/:id'></Link> }
     </div>
   )
 }

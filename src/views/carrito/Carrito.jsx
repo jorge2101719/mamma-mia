@@ -34,11 +34,21 @@ export default function Carrito() {
             </Row>
             {carrito.map((producto) => 
               <Row key={producto.id}>
-                <Col xs={1} className='no-ver'><img src={producto.img} alt={producto.name} style={{width: '4rem'}} /></Col>
-                <Col xs={3} className='text-start'>{producto.name.charAt(0).toUpperCase() + producto.name.slice(1)} </Col>
-                <Col xs={1} className='no-ver'>{producto.cantidad}</Col>
-                <Col xs={1} className='no-ver text-end'>$ {producto.price.toLocaleString('cl-CL')} </Col>
-                <Col xs={1} md={2} className='no-ver text-end'>$ {(producto.cantidad * producto.price).toLocaleString('cl-CL')}</Col>
+                <Col xs={1} className='no-ver'>
+                  <img src={producto.img} alt={producto.name} style={{width: '4rem'}} />
+                </Col>
+                <Col xs={3} className='text-start'>
+                  {producto.name.charAt(0).toUpperCase() + producto.name.slice(1)}
+                </Col>
+                <Col xs={1} className='no-ver'>
+                  {producto.cantidad}
+                </Col>
+                <Col xs={1} className='no-ver text-end'>
+                  $ {producto.price.toLocaleString('cl-CL')}
+                </Col>
+                <Col xs={1} md={2} className='no-ver text-end'>
+                  $ {(producto.cantidad * producto.price).toLocaleString('cl-CL')}
+                </Col>
                 <Col ><Button onClick={() => incrementar(producto)} className='btn btn-success'> + </Button></Col>
                 <Col ><Button onClick={() => decrementar(producto)} className='btn btn-danger'> - </Button></Col>
               </Row>
