@@ -26,6 +26,7 @@ export default function Carrito() {
 
   return(
     <div className='mt-5 pt-5 estilo-carrito'>
+    {carrito ? (
       <Container style={{width: '100rem'}} className='justify-content-center'>
         {carrito.length > 0 ?  (
           <div className='text-light fs-5'>
@@ -52,7 +53,8 @@ export default function Carrito() {
                 <Col ><Button onClick={() => incrementar(producto)} className='btn btn-success'> + </Button></Col>
                 <Col ><Button onClick={() => decrementar(producto)} className='btn btn-danger'> - </Button></Col>
               </Row>
-            )}
+            )
+            }
           </div>
         ) : (
           <div>
@@ -81,7 +83,8 @@ export default function Carrito() {
           </Row>
           )
         }
-      </Container>
+      </Container>) : (undefined)
+    }
     </div>
   )
 }
