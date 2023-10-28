@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 
 import { PizzasContext } from '../../context/PizzaContext'
@@ -12,23 +12,27 @@ import '../pizzaHome/Home';
 
 const PizzaDetalle = () => {
   const { id } = useParams();
+
   const navigatePizza = useNavigate();
   const { pizzas, agregarAlCarrito } = useContext(PizzasContext);
 
-  const encontrarPizza = pizzas.find(pizza => pizza.id === id);
+  useEffect(() => {
+    const encontrarPizza = pizzas.find(pizza => pizza.id === id);
 
-  if(!encontrarPizza) {    
-    return (
-      navigatePizza('/')
-    )
-  }
-  
-  const pizzaIndex = pizzas.findIndex(e => e.id === id)
+    if(!encontrarPizza) {    
+      return (
+        navigatePizza('/')
+      )
+    }
+  }, [id]);
+
+  const pizzaIndex = pizzas.findIndex(e => e.id === id);
 
   const detalleDeLaPizza = pizzas[pizzaIndex];
 
   return (
     <div>
+      {/* <h1>{encontrarPizza ? <div>El pizza está bien</div> : undefined}</h1> */}
       {detalleDeLaPizza ? (
         <section className='detalles mt-5 pt-3'>
           <img src={detalleDeLaPizza.img} style={{width: '100%'}}></img>
@@ -59,7 +63,7 @@ const PizzaDetalle = () => {
               </p>
             </section>
           </div>
-        </section>) : <Link to='/pizza/:id'></Link> }
+        </section>) : undefined }
     </div>
   )
 }

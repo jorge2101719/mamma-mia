@@ -59,7 +59,7 @@ const PizzasContextProvider = ({ children }) => {
   }
 
   return (
-    <PizzasContext.Provider value={{ pizzas, carrito, total, contador, agregarAlCarrito, quitarDelCarrito, limpiarElCarrito, pagar }} >
+    <PizzasContext.Provider value={{ pizzas, carrito, total, contador, getPizzas, agregarAlCarrito, quitarDelCarrito, limpiarElCarrito, pagar }} >
       {children}
     </PizzasContext.Provider>
   )
